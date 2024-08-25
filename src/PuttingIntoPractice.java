@@ -34,7 +34,7 @@ public class PuttingIntoPractice {
         System.out.println("3. Найти всех трейдеров из Кембриджа и отсортировать их по именам.");
         transactions.stream()
                 .map(Transaction::getTrader)
-                .filter(t3 -> t3.getCity() == "Cambridge")
+                .filter(t3 -> t3.getCity().equals("Cambridge"))
                 .distinct()
                 .sorted((Comparator.comparing(Trader::getName)))
                 .forEach(System.out::println);
